@@ -44,16 +44,16 @@ DESCRIPTION
 
 EXAMPLES
     # non-hybrid, invisible in-edges, 10 steps per walker, out-degree, jump weight is 100
-    $0 datasets/wiki-Vote-lcc.txt.gz 0 X X 0 10 out 100 X
+    $0 datasets/wiki-Vote.txt.gz 0 X X 0 10 out 100 X
 
     # hybrid, invisible in-edges, 10 steps per walker, out-degree, jump weight is 100, recursive
-    $0 datasets/wiki-Vote-lcc.txt.gz 1 0 0 0 10 out 100 0
+    $0 datasets/wiki-Vote.txt.gz 1 0 0 0 10 out 100 0
 
     # hybrid, reduce variance, invisible in-edges, 100 steps per walker, out-degree, jump weight is 10, recursive
-    $0 datasets/wiki-Vote-lcc.txt.gz 1 0 1 0 100 out 10 0
+    $0 datasets/wiki-Vote.txt.gz 1 0 1 0 100 out 10 0
 
     # hybrid, average given, visible in-edges, 1000 steps per walker, jnt-degree, jump weight is 100, non-recursive
-    $0 datasets/wiki-Vote-lcc.txt.gz 1 1 0 1 1000 jnt 100 1
+    $0 datasets/wiki-Vote.txt.gz 1 1 0 1 1000 jnt 100 1
 "
 
     exit 1
@@ -133,6 +133,8 @@ for BUDGET in 0.1; do
         JUMP_STR="--jump_weight $JUMP_WEIGHT"
     fi 
 
+    OUTFILE=$OUTDIR/${file%.txt.gz}.${SUFFIX}.c${JUMP_COST}.w${JUMP_WEIGHT}.ns${NSTEPS}.b${BUDGET}.s${SEE_INCOMING}.txt
+
     $BIN_DIR/$RW_VARIANT \
     --filename $path \
     --budget $BUDGET \
@@ -143,7 +145,8 @@ for BUDGET in 0.1; do
     --distribution $EXTENSION \
     --visible_in $SEE_INCOMING \
     $USE_HYBRID $AVG_GIVEN $REDUCE_VAR $JUMP_STR $NOT_RECURSIVE --revisit_nocost $VS_FLAG \
-    > output.${file%.gz} 2> $OUTDIR/${file%.txt.gz}.${SUFFIX}.c${JUMP_COST}.w${JUMP_WEIGHT}.ns${NSTEPS}.b${BUDGET}.s${SEE_INCOMING}.txt
+    > output.${file%.gz} 2> $OUTFILE
 
+    echo "Results were saved to" $OUTFILE
 
 done

@@ -9,6 +9,7 @@ Features
 ------
 
   - Example script run_DUFS.sh
+  - Off-the-shelf compatibility with [SNAP datasets](https://snap.stanford.edu/data/)
 
 Requirements
 ------
@@ -24,11 +25,30 @@ To install this project, please ensure that you have installed the following (in
 Installation
 ------
 
+Use cmake to install `DUFS` in folder build.
+
+  git clone https://after-acceptance@bitbucket.org/after-acceptance/dufs.git
+  mkdir build && cd build
+  cmake && cmake --build .
+
+
+Download a network dataset from [SNAP](https://snap.stanford.edu/data/)
+
+  mkdir build/datasets
+  wget https://snap.stanford.edu/data/wiki-Vote.txt.gz --directory-prefix=build/datasets
+
+Running
+------
+
+Use the example script run_DUFS.sh.
+
+  cd build
+  examples/run_DUFS.sh datasets/wiki-Vote.txt.gz  0 X X 0 10 out 100 X
 
 Project structure
 -------------
 
-This project has been set up with a specific file/folder structure in mind. The following describes some important features of this setup:
+The file/folder structure of this project is based on [cppbase](https://github.com/kartikkumar/cppbase). The following describes some important features of this setup:
 
   - `cmake/Modules` : Contains `CMake` modules
   - `include`: Project header files (*.hpp)
