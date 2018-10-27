@@ -4,12 +4,12 @@
 
 # Set project source files.
 set(SRC
-  "${SRC_PATH}/factorial.cpp"
+  "${SRC_PATH}/maxLikelihood.cpp"
 )
 
 # Set project main file.
 set(MAIN_SRC
-  "${SRC_PATH}/main.cpp"
+  "${SRC_PATH}/DirectedFS_multithread.cpp"
 )
 
 # Set project test source files.

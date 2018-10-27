@@ -1,0 +1,36 @@
+#dataset |V| |E| |LCC|/|V| BUDGET_SPENT_BY_DURW_JUMPS_W1_C1
+datasets/amazon-0312-lcc.txt.gz 380167 3069889 1.0 0.11
+datasets/amazon-0312.txt.gz 400727 3200440 .94869325 0.12
+datasets/email-EuAll-lcc.txt.gz 34203 151930 1.0 0.19
+datasets/email-EuAll.txt.gz 265214 420045 .12896378 0.53
+datasets/flickr-links-lcc.txt.gz 1192172 20662264 1.0 0.06
+datasets/flickr-links.txt.gz 1715255 22613981 .69504 0.09
+datasets/livejournal-links-lcc.txt.gz 4150634 73941070 1.0 0.07
+datasets/livejournal-links.txt.gz 5204176 77402652 .797558345 0.05
+datasets/p2p-Gnutella31-lcc.txt.gz 14149 50916 1.0 0.22
+datasets/p2p-Gnutella31.txt.gz 62586 147892 .22607292 0.51
+datasets/soc-Epinions1-lcc.txt.gz 32223 443506 1.0 0.07
+datasets/soc-Epinions1.txt.gz 75879 508837 .42466295 0.13
+datasets/soc-pokec-relationships-lcc.txt.gz 1304537 29183655 1.0 0.05
+datasets/soc-pokec-relationships.txt.gz 1632803 30622564 .79895553842 0.06
+datasets/soc-Slashdot0902-lcc.txt.gz 71307 912381 1.0 0.08
+datasets/soc-Slashdot0902.txt.gz 82168 948464 .245382357245 0.10
+datasets/web-BerkStan-lcc.txt.gz 334857 4523232 1.0 0.13
+datasets/web-BerkStan.txt.gz 685230 7600595 .488678254 0.16
+datasets/web-Google-lcc.txt.gz 434818 3419124 1.0 0.14
+datasets/web-Google.txt.gz 875713 5105039 .49653 0.19
+datasets/web-NotreDame-lcc.txt.gz 53968 304685 1.0 0.21
+datasets/web-NotreDame.txt.gz 325729 1497134 .1656837432 0.25
+datasets/web-Stanford-lcc.txt.gz 150532 1576314 1.0 0.17
+datasets/web-Stanford.txt.gz 281903 2312497 .533985 0.20
+datasets/wiki-Talk-lcc.txt.gz 111881 1477893 1.0 0.08
+datasets/wiki-Talk.txt.gz 2394385 5021410 .0467264 0.33
+datasets/wiki-Vote-lcc.txt.gz 1300 39456 1.0 0.07
+datasets/wiki-Vote.txt.gz 7115 103689 .182712579 0.11
+datasets/youtube-links-lcc.txt.gz 509332 4272379 1.0 0.11
+datasets/youtube-links.txt.gz 1138499 4945382 .447371495 0.22
+datasets/rich/dbpedia.graph.txt.gz 5000 53196
+datasets/rich/dblp.graph.txt.gz 317080 2099732
+datasets/rich/citeseer.graph.txt.gz 14117 84038
+datasets/rich/lj.graph.txt.gz 3997962 69362378
+datasets/rich/wikipedia.graph.txt.gz 5271 129218

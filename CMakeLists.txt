@@ -1,4 +1,4 @@
-# Copyright (c) <year> <author> (<email>)
+# Copyright (c) 2018 Fabricio Murai (<email>)
 # Distributed under the MIT License.
 # See accompanying file LICENSE.md or copy at http://opensource.org/licenses/MIT
 
@@ -29,6 +29,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}     "${PROJECT_PATH}/cmake/Modules")
 set(INCLUDE_PATH                               "${PROJECT_PATH}/include")
 set(SRC_PATH                                   "${PROJECT_PATH}/src")
 set(TEST_SRC_PATH                              "${PROJECT_PATH}/test")
+set(EXAMPLES_PATH                              "${PROJECT_PATH}/examples")
 if(NOT EXTERNAL_PATH)
   set(EXTERNAL_PATH                            "${PROJECT_PATH}/external")
 endif(NOT EXTERNAL_PATH)
@@ -100,9 +101,12 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${LIB_PATH})
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${LIB_PATH})
 add_library(${LIB_NAME} ${SRC})
 
+
 if(BUILD_MAIN)
   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${BIN_PATH})
   add_executable(${MAIN_NAME} ${MAIN_SRC})
+  find_package(GSL REQUIRED)
+  target_link_libraries(${MAIN_NAME} gsl gslcblas)
   target_link_libraries(${MAIN_NAME} ${LIB_NAME})
 endif(BUILD_MAIN)
 
@@ -151,6 +155,9 @@ install(DIRECTORY ${INCLUDE_PATH}/${CMAKE_PROJECT_NAME}
         FILES_MATCHING PATTERN "*.hpp")
 install(TARGETS ${LIB_NAME} DESTINATION lib)
 install(TARGETS ${BIN_NAME} DESTINATION bin)
+configure_file(${EXAMPLES_PATH}/run_DUFS.sh examples/run_DUFS.sh COPYONLY)
+configure_file(${EXAMPLES_PATH}/get_nodes.sh examples/get_nodes.sh COPYONLY)
+configure_file(${EXAMPLES_PATH}/basic_stats.txt examples/basic_stats.txt COPYONLY)
 
 # Set up packager.
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "${CMAKE_PROJECT_NAME}")
