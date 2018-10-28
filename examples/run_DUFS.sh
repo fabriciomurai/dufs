@@ -59,11 +59,16 @@ EXAMPLES
     exit 1
 fi
 
+if [[ ! -f  $path ]]; then
+    echo "ERROR! File $path was not found."
+    exit 1
+fi
+
 
 RESULTS_DIR=results_${EXTENSION}
 
 
-RW_VARIANT=DUFS_main
+DUFS_BIN=`ls $BIN_DIR/*main`
 if [[ $USE_HYBRID -eq 1 ]]; then
     USE_HYBRID="--use_hybrid"
     if [[ $REDUCE_VAR -eq 1 ]]; then
@@ -135,7 +140,7 @@ for BUDGET in 0.1; do
 
     OUTFILE=$OUTDIR/${file%.txt.gz}.${SUFFIX}.c${JUMP_COST}.w${JUMP_WEIGHT}.ns${NSTEPS}.b${BUDGET}.s${SEE_INCOMING}.txt
 
-    $BIN_DIR/$RW_VARIANT \
+    $DUFS_BIN \
     --filename $path \
     --budget $BUDGET \
     --walkers $WALKERS \
