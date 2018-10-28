@@ -4,6 +4,7 @@
  * See accompanying file LICENSE.md or copy at http://opensource.org/licenses/MIT
  */
 #include <iostream>
+#include <algorithm>
 #include <string>
 #include <cstdlib>
 #include <cstring>

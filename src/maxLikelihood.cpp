@@ -6,6 +6,7 @@
 
 #include <assert.h>
 #include <iostream>
+#include <limits>
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
