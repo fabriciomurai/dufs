@@ -27,23 +27,25 @@ Installation
 
 Use cmake to install `DUFS` in folder build.
 
-  git clone https://after-acceptance@bitbucket.org/after-acceptance/dufs.git
-  mkdir build && cd build
-  cmake && cmake --build .
+    git clone https://after-acceptance@bitbucket.org/after-acceptance/dufs.git
+
+    mkdir build && cd build
+
+    cmake -DPROJECT_NAME=dufs .. && cmake --build .
 
 
-Download a network dataset from [SNAP](https://snap.stanford.edu/data/)
+Download a network dataset from [SNAP](https://snap.stanford.edu/data/). From the build folder, do:
 
-  mkdir build/datasets
-  wget https://snap.stanford.edu/data/wiki-Vote.txt.gz --directory-prefix=build/datasets
+    mkdir datasets
+
+    wget https://snap.stanford.edu/data/wiki-Vote.txt.gz --directory-prefix=datasets
 
 Running
 ------
 
-Use the example script run_DUFS.sh.
+Use the example script run_DUFS.sh. From the build folder, do:
 
-  cd build
-  examples/run_DUFS.sh datasets/wiki-Vote.txt.gz  0 X X 0 10 out 100 X
+    examples/run_DUFS.sh datasets/wiki-Vote.txt.gz  0 X X 0 10 out 100 X
 
 Project structure
 -------------
