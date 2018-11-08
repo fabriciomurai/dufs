@@ -27,7 +27,7 @@ Installation
 
 Use cmake to install `DUFS` in folder build.
 
-    git clone https://after-acceptance@bitbucket.org/after-acceptance/dufs.git
+    git clone https://github.com/fabriciomurai/dufs.git
 
     mkdir build && cd build
 
